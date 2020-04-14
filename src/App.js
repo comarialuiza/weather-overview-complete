@@ -2,13 +2,13 @@ import React from 'react';
 
 import GlobalStyle from './styles/global';
 import Menu from './components/Menu';
-import Overview from './components/Overview';
+import MainOverview from './components/MainOverview';
 
 function App() {
   return (
     <div id="container">
       <Menu />
-      <Overview />
+      <MainOverview />
       <GlobalStyle />
     </div>
   );
