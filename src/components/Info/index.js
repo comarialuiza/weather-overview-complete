@@ -1,11 +1,10 @@
 import React from 'react';
-
 import { Container } from './style';
 
-export default function Menu() {
+export default function Info() {
     return (
         <Container>
-            <h1>This is a menu!</h1>
+            <h1>Info</h1>
         </Container>
     );
 }

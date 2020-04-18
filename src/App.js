@@ -1,16 +1,17 @@
 import React from 'react';
 
-import GlobalStyle from './styles/global';
+import GlobalStyle from './styles/index';
+
 import Menu from './components/Menu';
-import MainOverview from './components/MainOverview';
+import Info from './components/Info';
 
 function App() {
   return (
-    <div id="container">
+    <>
       <Menu />
-      <MainOverview />
+      <Info />
       <GlobalStyle />
-    </div>
+    </>
   );
 }
 
