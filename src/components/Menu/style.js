@@ -52,6 +52,12 @@ export const Today = styled.div`
         }
     }
 
+    .cityName {
+        margin: 20px 0;
+        font-size: 12px;
+        color: #ccc;
+    }
+
     .weatherDescription {
         font-size: 12px;
         margin-top: 20px;

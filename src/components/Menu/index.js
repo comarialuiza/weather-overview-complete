@@ -15,6 +15,8 @@ export default function Menu() {
     const [ loading, setLoading ] = useState(false);
     const [ error, setError ] = useState(false);
 
+    const [ city, setCity ] = useState('');
+
     const tokenCoord = '1a2cbde2cb168e';
     const tokenTemp = '90a6a32ef837946def16d922074d4fc7'
 
@@ -25,12 +27,13 @@ export default function Menu() {
 
             /* Initial */
             e.preventDefault();
-
+            
             /* Get city name */
-            const city = e.target.elements.city.value;
+            const cityName = e.target.elements.city.value;
+            setCity(cityName);
 
             /* Get city coordinates */
-            const resCoord = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${tokenCoord}&q=${city}&format=json`);
+            const resCoord = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${tokenCoord}&q=${cityName}&format=json`);
             const lat = resCoord.data[0].lat;
             const lon = resCoord.data[0].lon;
 
@@ -73,6 +76,8 @@ export default function Menu() {
                             <span className="temperature">{ weatherToday.temp }</span>
                             <span className="temperatureCelsius">°C</span>
                         </p>
+
+                        <p className="cityName">{ city }</p>
                         <p className="weatherDescription">{ weatherToday.weather[0].main }</p>
                     </>
                 }
